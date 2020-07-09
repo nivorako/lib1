@@ -46,21 +46,15 @@ end
 
 
 # Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)
-def ascending_length_sort(list)
-    number_of_passing_by = 0 
-    exchange_done = true  
-    while exchange_done == true 
-      exchange_done = false 
-      for i in 0...list.size-1-number_of_passing_by
-        if list[i].length > list[i+1].length
-          #permutation
-          aux = list[i]
-          list[i] = list[i+1]
-          list[i+1] = aux 
-          exchange_done = true 
-        end
+
+
+# Quelle est la position dans l'array de la personne @epenser ?
+def position_in_list(list, search="@epenser")
+    for i in 0...list.size 
+      if list[i] == search 
+        return i
       end
-      number_of_passing_by += 1	
     end
+    return -1
   end 
-puts ascending_length_sort(liste)
+  puts position_in_list(liste,search="@epenser")
